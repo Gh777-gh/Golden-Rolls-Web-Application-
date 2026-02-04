@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golden Rolls - Place Your Order</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img src="logo.png" alt="Golden Rolls Logo" />
+          <h1>Golden Rolls</h1>
+        </div>
+        <p>Your Ultimate Cinnamon Roll Destination</p>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="order.html">Place Your Order</a></li>
+            <li><a href="#" target="_blank">Follow Us on Instagram</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="ordering-steps">
+        <h2>How to Place an Order</h2>
+        <ol>
+          <li>
+            Enter your personal information: Name, Email, and Phone Number.
+          </li>
+          <li>Select your preferred product from the menu.</li>
+          <li>Choose the quantity of the selected product.</li>
+          <li>Review the total price before confirming.</li>
+          <li>
+            Optionally, add any special requests in the Additional Notes field.
+          </li>
+          <li>Click the "Submit Order" button to complete your order.</li>
+          <li>Wait for an order confirmation message.</li>
+        </ol>
+      </section>
+
+      <section id="pricing">
+        <h2>Our Pricing</h2>
+        <table>
+          <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Price (SAR)</th>
+          </tr>
+          <tr>
+            <td>Original Cinnabon</td>
+            <td>Classic cinnamon roll topped with rich frosting</td>
+            <td>15 SAR</td>
+          </tr>
+          <tr>
+            <td>Coffee Roll</td>
+            <td>A delightful coffee-infused cinnamon roll</td>
+            <td>13 SAR</td>
+          </tr>
+          <tr>
+            <td>Cinnabon Mini</td>
+            <td>Perfect bite-sized cinnamon rolls</td>
+            <td>10 SAR</td>
+          </tr>
+          <tr>
+            <td>Cinnamon Roll Cookies</td>
+            <td>Crunchy cookies with a cinnamon roll twist</td>
+            <td>9 SAR</td>
+          </tr>
+        </table>
+      </section>
+      <section id="order-form">
+        <h2>Place Your Order</h2>
+        <form id="orderForm" action="#" method="post">
+          <fieldset>
+            <legend>Your Information</legend>
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+
+            <label for="phone">Phone Number:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Your Phone Number"
+              required
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Select Your Items</legend>
+
+            <label for="product">Product:</label>
+            <select
+              id="product"
+              name="product"
+              required
+              onchange="updatePrice()"
+            >
+              <option value="">--Select an Item--</option>
+              <option value="original" data-price="15">
+                Original Cinnabon - 15 SAR
+              </option>
+              <option value="coffee" data-price="13">
+                Coffee Roll - 13 SAR
+              </option>
+              <option value="mini" data-price="10">
+                Cinnabon Mini - 10 SAR
+              </option>
+              <option value="cookies" data-price="9">
+                Cinnamon Roll Cookies - 9 SAR
+              </option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              value="1"
+              required
+              onchange="updatePrice()"
+            />
+
+            <p>
+              <strong>Total Price: <span id="total-price">0</span> SAR</strong>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Additional Notes</legend>
+            <label for="notes">Special Requests:</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="4"
+              cols="50"
+              placeholder="Add any special requests here..."
+            ></textarea>
+          </fieldset>
+
+          <button type="submit">Submit Order</button>
+        </form>
+      </section>
+
+      <section id="images">
+        <h2>Our Best Sellers</h2>
+        <ul>
+          <li>
+            <img
+              src="original-cinnabon.jpg"
+              alt="Original Cinnabon"
+              width="200"
+            />
+          </li>
+          <li><img src="coffee-roll.jpg" alt="Coffee Roll" width="200" /></li>
+          <li>
+            <img src="cinnabon-mini.jpg" alt="Cinnabon Mini" width="200" />
+          </li>
+          <li>
+            <img
+              src="cinnamon-roll-cookies.jpg"
+              alt="Cinnamon Roll Cookies"
+              width="200"
+            />
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Golden Rolls &nbsp; | &nbsp; All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
